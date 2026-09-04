@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>O Macaco Te Responde 🐒</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: Arial, sans-serif;
+      background: radial-gradient(circle at top, #2b2b2b, #080808 70%);
+      color: white;
+      padding: 20px;
+    }
+    .card {
+      width: min(92vw, 700px);
+      text-align: center;
+      background: rgba(255,255,255,.08);
+      border: 1px solid rgba(255,255,255,.15);
+      border-radius: 24px;
+      padding: 22px;
+      box-shadow: 0 20px 60px rgba(0,0,0,.5);
+      backdrop-filter: blur(8px);
+    }
+    h1 { margin: 0 0 8px; font-size: clamp(26px, 6vw, 44px); }
+    p { opacity: .8; margin: 0 0 18px; }
+    img {
+      width: 100%;
+      max-height: 70vh;
+      object-fit: contain;
+      border-radius: 16px;
+      display: block;
+      background: #111;
+    }
+    button {
+      margin-top: 18px;
+      border: 0;
+      border-radius: 999px;
+      padding: 14px 24px;
+      font-size: 17px;
+      font-weight: bold;
+      cursor: pointer;
+      background: white;
+      color: #111;
+      transition: transform .15s, box-shadow .15s;
+    }
+    button:hover { transform: scale(1.05); box-shadow: 0 8px 25px rgba(255,255,255,.18); }
+    #resposta { margin-top: 15px; min-height: 24px; font-weight: bold; }
+  </style>
+</head>
+<body>
+  <main class="card">
+    <h1>🐒 O Macaco Tem Algo a Dizer</h1>
+    <p>Clique no botão se tiver coragem.</p>
+    <img src="macaco.jpg" alt="Meme do macaco fazendo um gesto">
+    <button onclick="responder()">CLIQUE AQUI</button>
+    <div id="resposta"></div>
+  </main>
+
+  <script>
+    const respostas = [
+      "O macaco já respondeu. 🐒",
+      "Ele não parece muito feliz com você. 😂",
+      "Resposta recebida com sucesso. 👍",
+      "O macaco disse: hoje não. 😭",
+      "Você realmente clicou nisso? 💀"
+    ];
+
+    function responder() {
+      const r = respostas[Math.floor(Math.random() * respostas.length)];
+      document.getElementById("resposta").textContent = r;
+    }
+  </script>
+</body>
+</html>
